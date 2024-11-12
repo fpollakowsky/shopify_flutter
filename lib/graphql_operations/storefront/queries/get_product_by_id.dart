@@ -1,7 +1,7 @@
 /// Query to get a single product by id
 const String getProductByIdQuery = r'''
-query getProductById(\$id: ID!) {
-  product(id: \$id) {
+query getProductById($id: ID!) {
+  product(id: $id) {
     id
     title
     description

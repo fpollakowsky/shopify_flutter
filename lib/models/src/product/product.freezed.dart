@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Product {
   String get title => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
-  bool get availableForSale => throw _privateConstructorUsedError;
+  bool? get availableForSale => throw _privateConstructorUsedError;
   String get createdAt => throw _privateConstructorUsedError;
   List<ProductVariant> get productVariants =>
       throw _privateConstructorUsedError;
@@ -51,7 +51,7 @@ abstract class $ProductCopyWith<$Res> {
   $Res call(
       {String title,
       String id,
-      bool availableForSale,
+      bool? availableForSale,
       String createdAt,
       List<ProductVariant> productVariants,
       String productType,
@@ -85,7 +85,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
   $Res call({
     Object? title = null,
     Object? id = null,
-    Object? availableForSale = null,
+    Object? availableForSale = freezed,
     Object? createdAt = null,
     Object? productVariants = null,
     Object? productType = null,
@@ -112,10 +112,10 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      availableForSale: null == availableForSale
+      availableForSale: freezed == availableForSale
           ? _value.availableForSale
           : availableForSale // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -194,7 +194,7 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
   $Res call(
       {String title,
       String id,
-      bool availableForSale,
+      bool? availableForSale,
       String createdAt,
       List<ProductVariant> productVariants,
       String productType,
@@ -226,7 +226,7 @@ class __$$ProductImplCopyWithImpl<$Res>
   $Res call({
     Object? title = null,
     Object? id = null,
-    Object? availableForSale = null,
+    Object? availableForSale = freezed,
     Object? createdAt = null,
     Object? productVariants = null,
     Object? productType = null,
@@ -253,10 +253,10 @@ class __$$ProductImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      availableForSale: null == availableForSale
+      availableForSale: freezed == availableForSale
           ? _value.availableForSale
           : availableForSale // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -331,7 +331,7 @@ class _$ProductImpl extends _Product {
   _$ProductImpl(
       {required this.title,
       required this.id,
-      required this.availableForSale,
+      this.availableForSale,
       required this.createdAt,
       required final List<ProductVariant> productVariants,
       required this.productType,
@@ -361,7 +361,7 @@ class _$ProductImpl extends _Product {
   @override
   final String id;
   @override
-  final bool availableForSale;
+  final bool? availableForSale;
   @override
   final String createdAt;
   final List<ProductVariant> _productVariants;
@@ -511,7 +511,7 @@ abstract class _Product extends Product {
   factory _Product(
       {required final String title,
       required final String id,
-      required final bool availableForSale,
+      final bool? availableForSale,
       required final String createdAt,
       required final List<ProductVariant> productVariants,
       required final String productType,
@@ -535,7 +535,7 @@ abstract class _Product extends Product {
   @override
   String get id;
   @override
-  bool get availableForSale;
+  bool? get availableForSale;
   @override
   String get createdAt;
   @override
