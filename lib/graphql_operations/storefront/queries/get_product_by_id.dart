@@ -10,6 +10,29 @@ query getProductById($id: ID!) {
     productType
     vendor
     tags
+    availableForSale
+    createdAt
+    updatedAt
+    publishedAt
+    options(first: 50) {
+      id
+      name
+      values
+    } 
+    media(first: 250) {
+      edges {
+        node {
+          alt
+          id
+          mediaContentType
+          previewImage {
+            altText
+            id
+            originalSrc
+          }
+        }
+      }
+    }
     images(first: 250) {
       edges {
         node {
